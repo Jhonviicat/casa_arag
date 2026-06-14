@@ -1,0 +1,780 @@
+/* ==========================================================================
+   1. VARIABLES DE COLOR
+   ========================================================================== */
+:root {
+    --color-fondo: #FCF9F5;
+    --color-principal: #4A2E1B;
+    --color-secundario: #D9C5B2;
+    --color-blanco: #FFFFFF;
+}
+
+/* ==========================================================================
+   2. ESTILOS BASE Y RESET
+   ========================================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-principal);
+}
+
+h1, h2, h3 {
+    font-family: "DynaPuff", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 700; /* La dejamos gruesa y llamativa para los títulos */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+/* ==========================================================================
+   3. ESTRUCTURAS GLOBALES 
+   ========================================================================== */
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el bloque en pantallas grandes */
+    box-sizing: border-box; /* Evita que el padding sume tamaño extra al contenedor */
+}
+
+/* ==========================================================================
+   4. HEADER Y NAV (Pensado para Celulares)
+   ========================================================================== */
+header {
+    background-color: var(--color-blanco);
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(74, 46, 27, 0.05);
+    text-align: center;
+    /* 🎯 SECCIÓN FIJA EN PANTALLA */
+    position: sticky;      /* Hace que el elemento "flote" al hacer scroll */
+    top: 0;                /* Se congela exactamente en el borde superior */
+    z-index: 1000;         /* Actúa como un escudo para que pase por encima de cualquier foto o tarjeta */
+}
+
+header h1 {
+    margin: 0 0 15px 0;
+    font-size: 26px;
+    color: var(--color-principal);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-principal);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 0;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-secundario);
+}
+
+/* ==========================================================================
+   5. SECCIÓN HERO (Banner de Bienvenida)
+   ========================================================================== */
+.hero {
+    background-color: #EFE6DD; /* Un tono café con leche muy suave para contrastar */
+    padding: 60px 20px;        /* Espacio interior: arriba/abajo y lados */
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: var(--color-principal);
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;          /* Separa las líneas de texto para que sea fácil de leer */
+    max-width: 600px;
+    margin: 0 auto 30px auto;  /* Centra el párrafo y le da espacio al botón de abajo */
+}
+
+/* El Botón de Acción */
+.btn-principal {
+    display: inline-block;     /* Permite que se comporte como un bloque pero que no ocupe todo el ancho */
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 25px;       /* Bordes redondeados estilo amigurumi */
+    transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #69432B; /* Un marrón un poco más claro al pasar el mouse */
+}
+.hero {
+    position: relative;           /* Se vuelve el ancla para que el video absoluto se quede adentro */
+    overflow: hidden;             /* Actúa como una tijera: corta cualquier pedazo de video que intente salirse */
+    padding: 80px 20px;
+    background-color: var(--color-fondo); /* Si el internet está lento, este color crema respalda la carga */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 450px;            /* Le da una excelente presencia vertical en PC */
+}
+
+/* 🎯 EL SECRETO DE LA MARCA DE AGUA */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;            /* Adapta el video a toda la caja sin estirarlo ni deformarlo */
+    opacity: 0.12;                /* 💡 Clave: 12% de opacidad para que actúe como marca de agua sutil */
+    filter: grayscale(30%);       /* Atenúa un poco los colores vivos del video para proteger el contraste */
+    z-index: 1;                   /* Se va al fondo absoluto de la sección */
+    pointer-events: none;         /* Evita que si el usuario da clic derecho o interactúa, interfiera con el video */
+}
+
+/* El escudo del texto */
+.hero-contenido {
+    position: relative;
+    z-index: 2;                   /* Se para con autoridad al frente del video */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   6. SECCIÓN CATÁLOGO (Estilos para Celular)
+   ========================================================================== */
+.seccion-catalogo {
+    padding: 60px 20px;
+}
+
+.titulo-catalogo {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: var(--color-principal);
+}
+
+/* LA REJILLA EN CELULAR */
+.grid-productos {
+    display: grid;
+    grid-template-columns: 1fr; /* Significa: 1 sola columna que ocupa todo el espacio disponible */
+    gap: 30px;                  /* Separación entre tarjeta y tarjeta */
+}
+
+/* LA TARJETA DE PRODUCTO */
+.tarjeta-producto {
+    background-color: var(--color-blanco);
+    border-radius: 15px;
+    overflow: hidden;           /* Corta cualquier cosa que se salga de las esquinas redondeadas */
+    box-shadow: 0 4px 15px rgba(74, 46, 27, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* El cuadro gris donde irá la foto */
+.foto-producto {
+    background-color: var(--color-secundario);
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-principal);
+    font-weight: bold;
+}
+
+.info-producto {
+    padding: 20px;
+    text-align: center;
+}
+
+.info-producto h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+.precio {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin: 0 0 20px 0;
+}
+
+.btn-comprar {
+    display: block;
+    background-color: transparent;
+    color: var(--color-principal);
+    border: 2px solid var(--color-principal);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-comprar:hover {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+}
+
+/* ==========================================================================
+   7. SECCIÓN CONTACTO (Estilos base para celular)
+   ========================================================================== */
+.seccion-contacto {
+    padding: 60px 20px;
+}
+
+.contenedor-contacto {
+    display: flex;
+    flex-direction: column; /* Apilado vertical en móvil */
+    gap: 40px;
+}
+
+.info-contacto h2 {
+    font-size: 30px;
+    color: var(--color-principal);
+    margin-top: 0;
+}
+
+.info-contacto p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Botón Temático de WhatsApp */
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366; /* Verde oficial de WhatsApp */
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+}
+
+/* Estilos del Formulario */
+.formulario-contacto {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(74, 46, 27, 0.05);
+}
+
+.grupo-campo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-campo label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Estilizando los inputs de forma responsiva con 100% de ancho */
+.grupo-campo input,
+.grupo-campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--color-secundario);
+    border-radius: 8px;
+    background-color: var(--color-fondo);
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Cambio de color cuando el usuario hace clic para escribir */
+.grupo-campo input:focus,
+.grupo-campo textarea:focus {
+    outline: none;
+    border-color: var(--color-principal); 
+}
+
+.btn-enviar {
+    width: 100%;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #69432B;
+}
+
+/* ==========================================================================
+   8. SECCIÓN NOSOTROS (Estilos para celular)
+   ========================================================================== */
+.seccion-nosotros {
+    padding: 60px 20px;
+}
+
+.titulo-nosotros {
+    text-align: center;
+    font-size: 32px;
+    color: var(--color-principal);
+    margin-bottom: 50px;
+}
+
+/* Las filas se comportarán como columnas en el celular */
+.fila-nosotros {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px; /* Separación entre el bloque 1 y el bloque 2 */
+}
+
+/* El cuadro gris temporal para las fotos */
+.foto-nosotros-placeholder {
+    background-color: var(--color-secundario);
+    height: 300px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--color-principal);
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(74, 46, 27, 0.05);
+}
+
+.texto-nosotros h3 {
+    font-size: 24px;
+    color: var(--color-principal);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.texto-nosotros p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-principal);
+    text-align: justify; /* Hace que el bloque de texto se vea más ordenado */
+}
+
+/* ==========================================================================
+   9. FOOTER GLOBAL (Estilos base para celular)
+   ========================================================================== */
+footer {
+    background-color: var(--color-principal); /* El marrón oscuro de la marca */
+    color: var(--color-fondo);                /* El color crema claro para los textos */
+    padding: 50px 20px 20px 20px;
+    margin-top: 60px;                         /* Separa el footer del contenido de arriba */
+}
+
+.contenedor-footer {
+    display: flex;
+    flex-direction: column;                   /* Apilado vertical en móvil */
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.bloque-footer h3 {
+    font-family: "DynaPuff", system-ui;       /* Mantiene el estilo juguetón en el logo */
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--color-blanco);
+}
+
+.bloque-footer h4 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--color-secundario);           /* Resalta los títulos de los bloques */
+}
+
+.bloque-footer p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Bloque de Redes */
+.iconos-redes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.enlace-red {
+    color: var(--color-fondo);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.enlace-red-wa {
+    color: #25D366;                           /* Color verde característico de WhatsApp */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Barra inferior de derechos */
+.barra-copyright {
+    border-top: 1px solid rgba(217, 197, 178, 0.2); /* Línea divisoria sutil */
+    padding-top: 20px;
+    text-align: center;
+}
+
+.barra-copyright p {
+    font-size: 12px;
+    color: rgba(252, 249, 245, 0.7);
+    margin: 0;
+}
+
+.logo-img {
+    height: 100px;       /* Ajusta esta altura en píxeles hasta que quede al tamaño ideal de tu menú */
+    width: auto;        /* Hace que el ancho se calcule solo para que el logo no se safe ni se estire */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); /* Un sutil efecto de crecimiento al pasar el mouse */
+}
+
+/* 📸 EL FAMOSO DEGRADADO DE INSTAGRAM */
+.ig-color {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;    /* Recorta el degradado para que solo pinte las letras y el ícono */
+    background-clip: text; /* 🎯 AGREGA ESTA LÍNEA REQUERIDA POR COMPATIBILIDAD */
+    -webkit-text-fill-color: transparent; /* Hace transparente el color base para que brille el degradado de fondo */
+    display: inline-flex;             /* Corrección de renderizado para máscaras de texto */
+}
+
+/* 🎵 EL COLOR EMBLEMÁTICO DE TIKTOK */
+.tt-color {
+    color: #00f2fe; /* Usamos el Cyan neón característico que contrasta hermoso sobre el marrón */
+}
+
+/* Opcional: Si quieres que cambien a un tono más brillante al pasar el mouse */
+.ig-color:hover, .tt-color:hover {
+    filter: brightness(1.2);          /* Le da un sutil destello de luz al pasar el cursor */
+    transition: filter 0.3s ease;
+}
+
+/* ==========================================================================
+   10. ESTILOS DETALLADOS DEL CATÁLOGO
+   ========================================================================== */
+.seccion-catalogo {
+    padding: 60px 20px;
+}
+
+.titulo-catalogo {
+    text-align: center;
+    font-size: 36px;
+    color: var(--color-principal);
+    margin-bottom: 10px;
+}
+
+.subtitulo-catalogo {
+    text-align: center;
+    font-size: 16px;
+    color: var(--color-principal);
+    opacity: 0.8;
+    margin-bottom: 50px;
+}
+
+/* Tarjeta Madre */
+.tarjeta-producto {
+    background-color: var(--color-blanco);
+    border-radius: 15px;
+    overflow: hidden; /* Corta esquinas rígidas de las fotos hijas */
+    box-shadow: 0 4px 20px rgba(74, 46, 27, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-8px); /* Brinco elegante al pasar el cursor */
+    box-shadow: 0 12px 30px rgba(74, 46, 27, 0.12);
+}
+
+/* 🎯 OPTIMIZACIÓN DE IMÁGENES DE CATÁLOGO */
+.imagen-contenedor {
+    position: relative;
+    width: 100%;
+    height: 300px;                        /* Subimos a 300px para darle un poco más de aire */
+    background-color: var(--color-fondo); /* El tono crema de Casa Arág rellenará los espacios vacíos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;                  /* ¡La magia! Muestra la foto COMPLETA sin recortar ni un pixel */
+    padding: 15px;                        /* Colchón de seguridad para que el producto respire elegantemente */
+}
+
+/* Badge de Categoría flotante */
+.etiqueta-categoria {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--color-principal);
+    color: var(--color-fondo);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Información */
+.info-producto {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Hace que el botón de WA siempre se quede alineado abajo */
+}
+
+.info-producto h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: var(--color-principal);
+}
+
+.info-producto .descripcion {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+.info-producto .precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin: 0 0 20px 0;
+}
+
+/* Botón WhatsApp de la Tarjeta */
+.btn-pedido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-pedido i {
+    font-size: 18px;
+}
+
+.btn-pedido:hover {
+    background-color: #1ebd58;
+}
+
+/* ==========================================================================
+   11. BOTÓN GRÁFICO PREMIUM (Formulario)
+   ========================================================================== */
+.btn-enviar-imagen {
+    background: none;        /* Elimina el fondo gris del botón nativo */
+    border: none;            /* Elimina el borde tosco */
+    padding: 0;              /* Quita los colchones internos */
+    cursor: pointer;         /* Forza a que aparezca la manito interactiva */
+    width: 100%;             /* Se adapta de forma responsiva al ancho de la tarjeta */
+    display: block;
+    margin-top: 10px;
+}
+
+.btn-enviar-imagen img {
+    width: 100%;
+    height: auto;
+    max-width: 360px;        /* Evita que el botón se deforme en pantallas gigantes */
+    margin: 0 auto;          /* Lo mantiene centrado */
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efecto interactivo premium */
+.btn-enviar-imagen:hover img {
+    transform: scale(1.03);  /* Un sutil crecimiento elástico */
+    filter: brightness(1.1); /* Destella un poco de luz al pasar el mouse */
+}
+
+.foto-nosotros-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* Cubre todo el espacio sin deformar, aunque recorte un poco */
+    border-radius: 10px;
+}
+
+
+/* ==========================================================================
+   12. MEDIA QUERY (Para pantallas grandes: Computadoras y Tablets)
+   ========================================================================== */
+@media (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1px 50px;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    nav {
+        flex-direction: row;
+        gap: 30px;
+    }
+    .hero {
+        padding: 100px 20px; /* En PC le damos mucho más aire y altura al banner */
+    }
+    
+    .hero h2 {
+        font-size: 46px;     /* Letras más grandes para monitores */
+    }
+
+    .grid-productos {
+        /* ¡Aquí cambiamos el juego! En PC pasa de 1 columna a 3 columnas idénticas */
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .contenedor-contacto {
+        flex-direction: row; /* En PC se ponen uno al lado del otro */
+        align-items: center;
+    }
+
+    .info-contacto, .bloque-formulario {
+        flex: 1; /* Cada bloque toma exactamente la mitad del espacio (50%) */
+    }
+
+    .fila-nosotros {
+        flex-direction: row; /* En PC se ponen uno al lado del otro */
+        align-items: center;
+        gap: 60px;          /* Más separación entre foto y texto */
+    }
+
+    .foto-nosotros-placeholder, .texto-nosotros {
+        flex: 1;            /* Cada uno toma exactamente el 50% del ancho */
+    }
+
+    /* TRUCO INGENIERIL: Selecciona de forma automática las filas PAR (la segunda, la cuarta, etc.) */
+    .fila-nosotros:nth-child(even) {
+        flex-direction: row-reverse; /* Invierte el orden: el texto pasa a la izquierda y la foto a la derecha */
+    }
+
+    .contenedor-footer {
+        flex-direction: row;
+        justify-content: space-between; /* Empuja un bloque al extremo izquierdo y el otro al derecho */
+        align-items: flex-start;
+    }
+
+    .bloque-footer {
+        /* Eliminamos el flex: 1 para que cada bloque ocupe solo el espacio de su contenido */
+        flex: none; 
+    }
+
+    .info-marca {
+        max-width: 350px; /* Limita el ancho del texto para que no se extienda demasiado en pantallas gigantes */
+        text-align: left; /* Asegura la alineación limpia a la izquierda */
+    }
+
+    .lista-redes-v {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-end; /* Alinea todo el bloque a la derecha */
+    }
+
+    .enlace-red-icon {
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Espacio entre el ícono y la palabra */
+        color: var(--color-fondo);
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.3s ease;
+    }
+
+    .enlace-red-icon i {
+        font-size: 20px; /* Tamaño ideal para el ícono */
+    }
+
+    .enlace-red-icon:hover {
+        color: var(--color-secundario);
+    }
+
+    .wa-color {
+        color: #25D366; /* Mantiene el verde de WhatsApp para destacar */
+    }
+    
+    .tt-color {
+        color: #00f2fe; /* Mantiene el cyan de TikTok para destacar */
+    }
+}
+
+/* ==========================================================================
+   13. BOTÓN FLOTANTE DE WHATSAPP (Global con Animación de Pulso)
+   ========================================================================== */
+.btn-flotante-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: var(--color-blanco);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 9999;              /* Escudo supremo para quedar por encima de todo */
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    animation: pulsoOndaWa 2s infinite; /* Activa la animación en bucle infinito */
+}
+
+.btn-flotante-wa:hover {
+    transform: scale(1.1) rotate(5deg); /* Crece un poco y gira sutilmente al pasar el mouse */
+}
+
+/* 🧠 INGENIERÍA DE ANIMACIÓN: Crea una onda expansiva invisible que se dilata */
+@keyframes pulsoOndaWa {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
