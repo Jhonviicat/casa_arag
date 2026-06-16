@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <!-- Librería de íconos vectoriales Boxicons -->
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
@@ -20,13 +20,19 @@
             </a>
         </div>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="catalogo.html">Catálogo</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="contacto.html">Contacto</a>
+        <nav class="nav-menu" id="nav-menu">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="catalogo.html" class="nav-link">Catálogo</a>
+            <a href="nosotros.html" class="nav-link">Nosotros</a>
+            <a href="contacto.html" class="nav-link">Contacto</a>
         </nav>
+
+        <button class="btn-menu-movil" id="btn-menu-movil" aria-label="Abrir menú">
+            <i class='bx bx-menu' id="icono-menu"></i>
+        </button>
+
     </header>
+
     <main class="seccion-nosotros">
         <div class="contenedor">
             
@@ -55,7 +61,7 @@
         </div>
     </main>
 
-<!-- FOOTER GLOBAL OPTIMIZADO -->
+    <!-- FOOTER GLOBAL OPTIMIZADO -->
     <footer>
         <div class="contenedor contenedor-footer">
             
@@ -91,6 +97,38 @@
     <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20vengo de la página web y me gustaría cotizar un diseño personalizado." target="_blank" class="btn-flotante-wa" title="Escríbenos ya">
     <i class='bx bxl-whatsapp'></i>
     </a>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+            const btnMenu = document.getElementById("btn-menu-movil");
+            const navMenu = document.getElementById("nav-menu");
+            const iconoMenu = document.getElementById("icono-menu");
+
+            btnMenu.addEventListener("click", () => {
+            // 1. Intercambiar la clase 'abierto' en el nav
+            navMenu.classList.toggle("abierto");
+
+            // 2. Cambiar la física del icono (Si está abierto muestra una X, si no, las 3 líneas)
+            if (navMenu.classList.contains("abierto")) {
+                iconoMenu.className = "bx bx-x"; // Icono de cerrar de Boxicons
+                btnMenu.style.transform = "rotate(90deg)"; // Pequeño giro estético al abrir
+            } else {
+                iconoMenu.className = "bx bx-menu"; // Icono de hamburguesa original
+                btnMenu.style.transform = "rotate(0deg)";
+            }
+        });
+
+        // Opcional: Cerrar el menú automáticamente si el usuario da clic en un enlace
+            const enlaces = document.querySelectorAll(".nav-link");
+            enlaces.forEach(enlace => {
+            enlace.addEventListener("click", () => {
+                navMenu.classList.remove("abierto");
+                iconoMenu.className = "bx bx-menu";
+                btnMenu.style.transform = "rotate(0deg)";
+            });
+        });
+    });
+    </script>
 
 </body>
 </html>

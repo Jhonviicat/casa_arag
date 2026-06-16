@@ -10,216 +10,402 @@
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <!-- Librería de íconos vectoriales Boxicons -->
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/Logo_Sello.png" alt="Logo Casa Arág" class="logo-img">
-            </a>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/Logo_Sello.png" alt="Logo Casa Arág" class="logo-img">
+                </a>
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="catalogo.html" class="nav-link">Catálogo</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+
+            <button class="btn-menu-movil" id="btn-menu-movil" aria-label="Abrir menú">
+                <i class='bx bx-menu' id="icono-menu"></i>
+            </button>
+
+        </header>
+
+        <main class="seccion-catalogo">
+            <div class="contenedor">
+                <h2 class="titulo-catalogo">Nuestra Colección Artesanal</h2>
+                <p class="subtitulo-catalogo">Cada pieza cuenta una historia tejida a mano.</p>
+                
+                <div class="filtros-contenedor">
+                    <button class="btn-filtro activo" data-target="todos">Todos</button>
+                    <button class="btn-filtro" data-target="hogar">Hogar</button>
+                    <button class="btn-filtro" data-target="accesorios">Accesorios</button>
+                    <button class="btn-filtro" data-target="amigurumis">Amigurumis</button>
+                    <button class="btn-filtro" data-target="mascotas">Mascotas</button>
+                </div>
+
+                <!-- Contenedor principal en CSS Grid -->
+                <div class="grid-productos">
+
+                    <!-- Tarjeta 1: Conjunto Margaritas -->
+                    <div class="tarjeta-producto" data-category="accesorios">
+                        <div class="imagen-contenedor">
+                            <span class="etiqueta-categoria">Accesorios</span>
+                            <img src="img/conjunto-margaritas.jpg" 
+                                alt="Conjunto Primavera Margaritas"
+                                class="img-interactiva"
+                                data-galeria="img/conjunto-margaritas.jpg,img/saco.jpg">
+                        </div>
+                        <div class="info-producto">
+                            <h3>Conjunto Primavera Margaritas</h3>
+                            <p class="descripcion">Exclusivo outfit de tres piezas: short, top y sombrero tejido con detalles florales.</p>
+                            <p class="precio">Cotizar Precio</p>
+                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Conjunto%20Primavera%20Margaritas" target="_blank" class="btn-pedido">
+                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2: Traje Chapulin Colorado -->
+                    <div class="tarjeta-producto" data-category="mascotas">
+                        <div class="imagen-contenedor">
+                            <span class="etiqueta-categoria">Mascotas</span>
+                             <img src="img/Chapulin1.jpeg" 
+                                alt="Traje Chapulin Colorado para Perros"
+                                class="img-interactiva"
+                                data-galeria="img/Chapulin1.jpeg,img/Chapulin2.jpeg,img/Chapulin3.jpeg,img/Chapulin4.jpeg">
+                        </div>
+                        <div class="info-producto">
+                            <h3>Traje Chapulin Colorado</h3>
+                            <p class="descripcion">Traje exclusivo para perros, inspirado en el personaje de Chapulin Colorado.</p>
+                            <p class="precio">Cotizar Precio</p>
+                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Traje%20Chapulin%20Colorado" target="_blank" class="btn-pedido">
+                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3: Traje de Navidad -->
+                    <div class="tarjeta-producto" data-category="infantil">
+                        <div class="imagen-contenedor">
+                            <span class="etiqueta-categoria">Infantil</span>
+                            <img src="img/forro_vino.jpg" alt="Traje Infantil Santa Claus">
+                        </div>
+                        <div class="info-producto">
+                            <h3>Pantalón Suspensores Claus</h3>
+                            <p class="descripcion">Traje navideño infantil con tirantas y cinturón tejido, suave y cómodo para bebés.</p>
+                            <p class="precio">Cotizar Precio</p>
+                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20informaci%C3%B3n%20del%20traje%20navide%C3%B1o%20con%20suspensores" target="_blank" class="btn-pedido">
+                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 4: Canasto Rosas -->
+                    <div class="tarjeta-producto" data-category="hogar">
+                        <div class="imagen-contenedor">
+                            <span class="etiqueta-categoria">Hogar</span>
+                            <img src="img/canasto-rosas.jpg" alt="Canasto Organizador de Rosas">
+                        </div>
+                        <div class="info-producto">
+                            <h3>Canasto Premium Rosas</h3>
+                            <p class="descripcion">Cesta organizadora tejida en trapillo premium con un elegante borde decorado de rosas rojas.</p>
+                            <p class="precio">Cotizar Precio</p>
+                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20interesa%20el%20canasto%20premium%20de%20rosas" target="_blank" class="btn-pedido">
+                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 5: Canastos Pasteles -->
+                    <div class="tarjeta-producto" data-category="hogar">
+                        <div class="imagen-contenedor">
+                            <span class="etiqueta-categoria">Hogar</span>
+                            <img src="img/doble_canasto.jpg" alt="Canastos Organizadores Pasteles">
+                        </div>
+                        <div class="info-producto">
+                            <h3>Set de Canastos Organizadores</h3>
+                            <p class="descripcion">Canastitas multiusos en tonos pasteles, ideales para decoración o empaques de regalos especiales.</p>
+                            <p class="precio">Cotizar Precio</p>
+                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20informaci%C3%B3n%20del%20set%20de%20canastos%20pasteles" target="_blank" class="btn-pedido">
+                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 6: Separador Girasol -->
+                    <div class="tarjeta-producto" data-category="accesorios">
+                        <div class="imagen-contenedor">
+                            <span class="etiqueta-categoria">Accesorios</span>
+                            <img src="img/separador-girasol.jpg" alt="Separador de libros Girasol">
+                        </div>
+                        <div class="info-producto">
+                            <h3>Separador de Libros Girasol</h3>
+                            <p class="descripcion">Detalle tejido ideal para amantes de la lectura. Un girasol lleno de vida para acompañar tus libros.</p>
+                            <p class="precio">Cotizar Precio</p>
+                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20un%20separador%20de%20girasol" target="_blank" class="btn-pedido">
+                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 7: Llavero Abejita -->
+                    <div class="tarjeta-producto" data-category="accesorios">
+                        <div class="imagen-contenedor">
+                            <span class="etiqueta-categoria">Accesorios</span>
+                            <img src="img/separador_abeja.jpg" alt="Llavero Abeja Amigurumi">
+                        </div>
+                        <div class="info-producto">
+                            <h3>Llavero Abejita Tierna</h3>
+                            <p class="descripcion">Pequeña abejita amigurumi acompañada de una margarita blanca tejida, el accesorio perfecto para tus llaves.</p>
+                            <p class="precio">Cotizar Precio</p>
+                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20cotizar%20el%20llavero%20de%20abejita" target="_blank" class="btn-pedido">
+                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 8: Esferos Corazón -->
+                    <div class="tarjeta-producto" data-category="accesorios">
+                        <div class="imagen-contenedor">
+                            <span class="etiqueta-categoria">Accesorios</span>
+                            <img src="img/esfero_corazon.jpg" alt="Esferos decorados corazón">
+                        </div>
+                        <div class="info-producto">
+                            <h3>Varitas/Esferos San Valentín</h3>
+                            <p class="descripcion">Esferos decorativos forrados con apliques superiores en forma de corazones rosa y lazos delicados.</p>
+                            <p class="precio">Cotizar Precio</p>
+                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20interesan%20los%20esferos%20decorados%20de%20coraz%C3%B3n" target="_blank" class="btn-pedido">
+                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 9: Maceta Corazón -->
+                    <div class="tarjeta-producto" data-category="accesorios">
+                        <div class="imagen-contenedor">
+                            <span class="etiqueta-categoria">Accesorios</span>
+                            <img src="img/maceta-corazon.jpg" alt="Mini Maceta Corazón Amigurumi">
+                        </div>
+                        <div class="info-producto">
+                            <h3>Mini Maceta Corazón</h3>
+                            <p class="descripcion">Pequeña maceta rústica con un gran corazón amigurumi rojo. Un detalle inolvidable y duradero.</p>
+                            <p class="precio">Cotizar Precio</p>
+                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20encargar%20una%20mini%20maceta%20de%20coraz%C3%B3n" target="_blank" class="btn-pedido">
+                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER GLOBAL OPTIMIZADO -->
+        <footer>
+            <div class="contenedor contenedor-footer">
+                
+                <!-- Bloque 1: Identidad -->
+                <div class="bloque-footer info-marca">
+                    <img src="img/Logo_Sello.png" alt="Logo Casa Arág" class="logo-img">
+                    <p>Amigurumis y diseños personalizados hechos con hilos de amor.</p>
+                </div>
+
+                <!-- Bloque 2: Redes Sociales -->
+                <div class="bloque-footer redes-contacto">
+                    <h4>Conéctate con Nosotros</h4>
+                    <div class="lista-redes-v">
+                        <a href="https://www.instagram.com/casa.arag/#" target="_blank" class="enlace-red-icon ig-color">
+                            <i class='bx bxl-instagram'></i> Instagram
+                        </a>
+                        <a href="https://www.tiktok.com/@casa.arag" target="_blank" class="enlace-red-icon tt-color">
+                            <i class='bx bxl-tiktok'></i> TikTok
+                        </a>
+                        <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g" target="_blank" class="enlace-red-icon wa-color">
+                            <i class='bx bxl-whatsapp'></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="barra-copyright">
+                <p>&copy; 2026 Casa Arág. Todos los derechos reservados. Hecho con ❤️ en Colombia.</p>
+            </div>
+        </footer>
+
+        <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20vengo de la página web y me gustaría cotizar un diseño personalizado." target="_blank" class="btn-flotante-wa" title="Escríbenos ya">
+        <i class='bx bxl-whatsapp'></i>
+        </a>
+
+        <!-- MOTOR DE FILTRADO INTERACTIVO -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const botones = document.querySelectorAll(".btn-filtro");
+                const tarjetas = document.querySelectorAll(".producto-tarjeta");
+
+                botones.forEach(boton => {
+                    boton.addEventListener("click", () => {
+                        // 1. Quitar la clase 'activo' del botón anterior y ponérsela al que recibió el clic
+                        document.querySelector(".btn-filtro.activo").classList.remove("activo");
+                        boton.classList.add("activo");
+
+                        // 2. Obtener la categoría que el usuario quiere ver
+                        const categoriaSeleccionada = boton.getAttribute("data-target");
+
+                        // 3. Evaluar cada tarjeta de producto
+                        tarjetas.forEach(tarjeta => {
+                            const categoriaTarjeta = tarjeta.getAttribute("data-category");
+
+                            // Si el filtro es 'todos' o la tarjeta coincide con la categoría, se muestra
+                            if (categoriaSeleccionada === "todos" || categoriaTarjeta === categoriaSeleccionada) {
+                                tarjeta.classList.remove("oculto");
+                            } else {
+                                // Si no coincide, se le inyecta la clase que tiene 'display: none'
+                                tarjeta.classList.add("oculto");
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <!-- MOTOR DEL VISOR MULTI-ÁNGULO -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const modal = document.getElementById("visor-modal");
+                const imgPrincipal = document.getElementById("visor-img-principal");
+                const contenedorMiniaturas = document.getElementById("visor-miniaturas");
+                const btnCerrar = document.querySelector(".visor-cerrar");
+                const btnIzq = document.getElementById("nav-izq");
+                const btnDer = document.getElementById("nav-der");
+
+                let imagenesGaleria = [];
+                let indiceActual = 0;
+
+                // 1. Despertar el visor al hacer clic en fotos con galería
+                document.querySelectorAll(".img-interactiva").forEach(img => {
+                    img.addEventListener("click", () => {
+                        const galeriaRaw = img.getAttribute("data-galeria");
+                        if (!galeriaRaw) return;
+
+                        // Convertir el texto de comas en una matriz real de rutas de archivos
+                        imagenesGaleria = galeriaRaw.split(",");
+                        indiceActual = 0;
+
+                        abrirVisor();
+                    });
+                });
+
+                function abrirVisor() {
+                    modal.style.display = "flex";
+                    actualizarVista();
+                    renderizarMiniaturas();
+                }
+
+                function actualizarVista() {
+                    imgPrincipal.src = imagenesGaleria[indiceActual];
+                    
+                    // Actualizar estado activo en las miniaturas
+                    const minis = document.querySelectorAll(".miniatura");
+                    minis.forEach((m, idx) => {
+                        if (idx === indiceActual) m.classList.add("activa");
+                        else m.classList.remove("activa");
+                    });
+                }
+
+                function renderizarMiniaturas() {
+                    contenedorMiniaturas.innerHTML = ""; // Limpiar miniaturas anteriores
+                    imagenesGaleria.forEach((ruta, idx) => {
+                        const miniaturaImg = document.createElement("img");
+                        miniaturaImg.src = ruta;
+                        miniaturaImg.classList.add("miniatura");
+                        if (idx === indiceActual) miniaturaImg.classList.add("activa");
+
+                        // Permitir saltar de ángulo al hacer clic directamente en la miniatura
+                        miniaturaImg.addEventListener("click", () => {
+                            indiceActual = idx;
+                            actualizarVista();
+                        });
+                        contenedorMiniaturas.appendChild(miniaturaImg);
+                    });
+                }
+
+                // 2. Navegación con Flechas
+                btnIzq.addEventListener("click", () => {
+                    indiceActual = (indiceActual === 0) ? imagenesGaleria.length - 1 : indiceActual - 1;
+                    actualizarVista();
+                });
+
+                btnDer.addEventListener("click", () => {
+                    indiceActual = (indiceActual === imagenesGaleria.length - 1) ? 0 : indiceActual + 1;
+                    actualizarVista();
+                });
+
+                // 3. Cerrar el visor
+                btnCerrar.addEventListener("click", () => modal.style.display = "none");
+                
+                // Cerrar si hacen clic en el fondo oscuro fuera de la foto
+                modal.addEventListener("click", (e) => {
+                    if (e.target === modal) modal.style.display = "none";
+                });
+            });
+        </script>
+
+        <!-- VISOR DE DETALLES MODAL (LIGHTBOX) -->
+        <div id="visor-modal" class="visor-modal">
+            <!-- Botón de cierre -->
+            <span class="visor-cerrar">&times;</span>
+
+            <!-- Contenedor principal de la galería -->
+            <div class="visor-contenido">
+                <!-- Controles de navegación lateral -->
+                <button class="visor-nav nav-izq" id="nav-izq">&#10094;</button>
+                
+                <div class="visor-vista-principal">
+                    <img id="visor-img-principal" src="" alt="Vista Detallada">
+                </div>
+
+                <button class="visor-nav nav-der" id="nav-der">&#10095;</button>
+            </div>
+
+            <!-- Carrusel de miniaturas inferiores -->
+            <div id="visor-miniaturas" class="visor-miniaturas"></div>
         </div>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="catalogo.html">Catálogo</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const btnMenu = document.getElementById("btn-menu-movil");
+                const navMenu = document.getElementById("nav-menu");
+                const iconoMenu = document.getElementById("icono-menu");
 
-<main class="seccion-catalogo">
-    <div class="contenedor">
-        <h2 class="titulo-catalogo">Nuestra Colección Artesanal</h2>
-        <p class="subtitulo-catalogo">Cada pieza cuenta una historia tejida a mano.</p>
+                btnMenu.addEventListener("click", () => {
+                    // 1. Intercambiar la clase 'abierto' en el nav
+                    navMenu.classList.toggle("abierto");
 
-        <!-- Contenedor principal en CSS Grid -->
-        <div class="grid-productos">
+                    // 2. Cambiar la física del icono (Si está abierto muestra una X, si no, las 3 líneas)
+                    if (navMenu.classList.contains("abierto")) {
+                        iconoMenu.className = "bx bx-x"; // Icono de cerrar de Boxicons
+                        btnMenu.style.transform = "rotate(90deg)"; // Pequeño giro estético al abrir
+                    } else {
+                        iconoMenu.className = "bx bx-menu"; // Icono de hamburguesa original
+                        btnMenu.style.transform = "rotate(0deg)";
+                    }
+                });
 
-            <!-- Tarjeta 1: Conjunto Margaritas -->
-            <div class="tarjeta-producto">
-                <div class="imagen-contenedor">
-                    <span class="etiqueta-categoria">Moda</span>
-                    <img src="img/conjunto-margaritas.jpg" alt="Conjunto Primavera Margaritas">
-                </div>
-                <div class="info-producto">
-                    <h3>Conjunto Primavera Margaritas</h3>
-                    <p class="descripcion">Exclusivo outfit de tres piezas: short, top y sombrero tejido con detalles florales.</p>
-                    <p class="precio">Cotizar Precio</p>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Conjunto%20Primavera%20Margaritas" target="_blank" class="btn-pedido">
-                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                    </a>
-                </div>
-            </div>
+                // Opcional: Cerrar el menú automáticamente si el usuario da clic en un enlace
+                const enlaces = document.querySelectorAll(".nav-link");
+                enlaces.forEach(enlace => {
+                    enlace.addEventListener("click", () => {
+                        navMenu.classList.remove("abierto");
+                        iconoMenu.className = "bx bx-menu";
+                        btnMenu.style.transform = "rotate(0deg)";
+                    });
+                });
+            });
+        </script>
 
-            <!-- Tarjeta 2: Chapulín Colorado -->
-            <div class="tarjeta-producto">
-                <div class="imagen-contenedor">
-                    <span class="etiqueta-categoria">Mascotas</span>
-                    <img src="img/chapulin.jpg" alt="Disfraz Chapulín Colorado Crochet">
-                </div>
-                <div class="info-producto">
-                    <h3>Traje Chapulín Colorado</h3>
-                    <p class="descripcion">Disfraz temático para tu mascota tejido a mano, ideal para sesiones fotográficas y fechas especiales.</p>
-                    <p class="precio">Cotizar Precio</p>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20interesa%20el%20traje%20del%20Chapul%C3%ADn%20Colorado" target="_blank" class="btn-pedido">
-                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Tarjeta 3: Traje de Navidad -->
-            <div class="tarjeta-producto">
-                <div class="imagen-contenedor">
-                    <span class="etiqueta-categoria">Infantil</span>
-                    <img src="img/forro_vino.jpg" alt="Traje Infantil Santa Claus">
-                </div>
-                <div class="info-producto">
-                    <h3>Pantalón Suspensores Claus</h3>
-                    <p class="descripcion">Traje navideño infantil con tirantas y cinturón tejido, suave y cómodo para bebés.</p>
-                    <p class="precio">Cotizar Precio</p>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20informaci%C3%B3n%20del%20traje%20navide%C3%B1o%20con%20suspensores" target="_blank" class="btn-pedido">
-                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Tarjeta 4: Canasto Rosas -->
-            <div class="tarjeta-producto">
-                <div class="imagen-contenedor">
-                    <span class="etiqueta-categoria">Hogar</span>
-                    <img src="img/canasto-rosas.jpg" alt="Canasto Organizador de Rosas">
-                </div>
-                <div class="info-producto">
-                    <h3>Canasto Premium Rosas</h3>
-                    <p class="descripcion">Cesta organizadora tejida en trapillo premium con un elegante borde decorado de rosas rojas.</p>
-                    <p class="precio">Cotizar Precio</p>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20interesa%20el%20canasto%20premium%20de%20rosas" target="_blank" class="btn-pedido">
-                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Tarjeta 5: Canastos Pasteles -->
-            <div class="tarjeta-producto">
-                <div class="imagen-contenedor">
-                    <span class="etiqueta-categoria">Hogar</span>
-                    <img src="img/doble_canasto.jpg" alt="Canastos Organizadores Pasteles">
-                </div>
-                <div class="info-producto">
-                    <h3>Set de Canastos Organizadores</h3>
-                    <p class="descripcion">Canastitas multiusos en tonos pasteles, ideales para decoración o empaques de regalos especiales.</p>
-                    <p class="precio">Cotizar Precio</p>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20informaci%C3%B3n%20del%20set%20de%20canastos%20pasteles" target="_blank" class="btn-pedido">
-                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Tarjeta 6: Separador Girasol -->
-            <div class="tarjeta-producto">
-                <div class="imagen-contenedor">
-                    <span class="etiqueta-categoria">Accesorios</span>
-                    <img src="img/separador-girasol.jpg" alt="Separador de libros Girasol">
-                </div>
-                <div class="info-producto">
-                    <h3>Separador de Libros Girasol</h3>
-                    <p class="descripcion">Detalle tejido ideal para amantes de la lectura. Un girasol lleno de vida para acompañar tus libros.</p>
-                    <p class="precio">Cotizar Precio</p>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20un%20separador%20de%20girasol" target="_blank" class="btn-pedido">
-                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Tarjeta 7: Llavero Abejita -->
-            <div class="tarjeta-producto">
-                <div class="imagen-contenedor">
-                    <span class="etiqueta-categoria">Accesorios</span>
-                    <img src="img/separador_abeja.jpg" alt="Llavero Abeja Amigurumi">
-                </div>
-                <div class="info-producto">
-                    <h3>Llavero Abejita Tierna</h3>
-                    <p class="descripcion">Pequeña abejita amigurumi acompañada de una margarita blanca tejida, el accesorio perfecto para tus llaves.</p>
-                    <p class="precio">Cotizar Precio</p>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20cotizar%20el%20llavero%20de%20abejita" target="_blank" class="btn-pedido">
-                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Tarjeta 8: Esferos Corazón -->
-            <div class="tarjeta-producto">
-                <div class="imagen-contenedor">
-                    <span class="etiqueta-categoria">Accesorios</span>
-                    <img src="img/esfero_corazon.jpg" alt="Esferos decorados corazón">
-                </div>
-                <div class="info-producto">
-                    <h3>Varitas/Esferos San Valentín</h3>
-                    <p class="descripcion">Esferos decorativos forrados con apliques superiores en forma de corazones rosa y lazos delicados.</p>
-                    <p class="precio">Cotizar Precio</p>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20interesan%20los%20esferos%20decorados%20de%20coraz%C3%B3n" target="_blank" class="btn-pedido">
-                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Tarjeta 9: Maceta Corazón -->
-            <div class="tarjeta-producto">
-                <div class="imagen-contenedor">
-                    <span class="etiqueta-categoria">Accesorios</span>
-                    <img src="img/maceta-corazon.jpg" alt="Mini Maceta Corazón Amigurumi">
-                </div>
-                <div class="info-producto">
-                    <h3>Mini Maceta Corazón</h3>
-                    <p class="descripcion">Pequeña maceta rústica con un gran corazón amigurumi rojo. Un detalle inolvidable y duradero.</p>
-                    <p class="precio">Cotizar Precio</p>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20encargar%20una%20mini%20maceta%20de%20coraz%C3%B3n" target="_blank" class="btn-pedido">
-                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</main>
-
-<!-- FOOTER GLOBAL OPTIMIZADO -->
-    <footer>
-        <div class="contenedor contenedor-footer">
-            
-            <!-- Bloque 1: Identidad -->
-            <div class="bloque-footer info-marca">
-                <img src="img/Logo_Sello.png" alt="Logo Casa Arág" class="logo-img">
-                <p>Amigurumis y diseños personalizados hechos con hilos de amor.</p>
-            </div>
-
-            <!-- Bloque 2: Redes Sociales -->
-            <div class="bloque-footer redes-contacto">
-                <h4>Conéctate con Nosotros</h4>
-                <div class="lista-redes-v">
-                    <a href="https://www.instagram.com/casa.arag/#" target="_blank" class="enlace-red-icon ig-color">
-                        <i class='bx bxl-instagram'></i> Instagram
-                    </a>
-                    <a href="https://www.tiktok.com/@casa.arag" target="_blank" class="enlace-red-icon tt-color">
-                        <i class='bx bxl-tiktok'></i> TikTok
-                    </a>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g" target="_blank" class="enlace-red-icon wa-color">
-                        <i class='bx bxl-whatsapp'></i> WhatsApp
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="barra-copyright">
-            <p>&copy; 2026 Casa Arág. Todos los derechos reservados. Hecho con ❤️ en Colombia.</p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20vengo de la página web y me gustaría cotizar un diseño personalizado." target="_blank" class="btn-flotante-wa" title="Escríbenos ya">
-    <i class='bx bxl-whatsapp'></i>
-    </a>
-
-</body>
+    </body>
 </html>

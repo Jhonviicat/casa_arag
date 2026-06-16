@@ -1,83 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Arág</title>
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
-    <!-- Librería de íconos vectoriales Boxicons -->
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/Logo_Sello.png" alt="Logo Casa Arág" class="logo-img">
-            </a>
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Casa Arág</title>
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/estilos.css">
+        <!-- Librería de íconos vectoriales Boxicons -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/Logo_Sello.png" alt="Logo Casa Arág" class="logo-img">
+                </a>
+            </div>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="catalogo.html">Catálogo</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="catalogo.html" class="nav-link">Catálogo</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
 
-<section class="hero">
-    
-    <video autoplay loop muted playsinline class="hero-video">
-        <source src="img/video-hero.mp4" type="video/mp4">
-        Tu navegador no soporta videos en segundo plano.
-    </video>
+            <button class="btn-menu-movil" id="btn-menu-movil" aria-label="Abrir menú">
+                <i class='bx bx-menu' id="icono-menu"></i>
+            </button>
 
-    <div class="hero-contenido">
-        <h1>Tejiendo Momentos Felices</h1>
-        <p>Descubre el tierno mundo de los amigurumis y diseños personalizados hechos con hilos de amor.</p>
-        <a href="catalogo.html" class="btn-principal">Ver Catálogo</a>
-    </div>
-</section>
+        </header>
 
-<!-- FOOTER GLOBAL OPTIMIZADO -->
-    <footer>
-        <div class="contenedor contenedor-footer">
+        <section class="hero">
             
-            <!-- Bloque 1: Identidad -->
-            <div class="bloque-footer info-marca">
-                <img src="img/Logo_Sello.png" alt="Logo Casa Arág" class="logo-img">
-                <p>Amigurumis y diseños personalizados hechos con hilos de amor.</p>
-            </div>
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="img/video-hero.mp4" type="video/mp4">
+                Tu navegador no soporta videos en segundo plano.
+            </video>
 
-            <!-- Bloque 2: Redes Sociales -->
-            <div class="bloque-footer redes-contacto">
-                <h4>Conéctate con Nosotros</h4>
-                <div class="lista-redes-v">
-                    <a href="https://www.instagram.com/casa.arag/#" target="_blank" class="enlace-red-icon ig-color">
-                        <i class='bx bxl-instagram'></i> Instagram
-                    </a>
-                    <a href="https://www.tiktok.com/@casa.arag" target="_blank" class="enlace-red-icon tt-color">
-                        <i class='bx bxl-tiktok'></i> TikTok
-                    </a>
-                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g" target="_blank" class="enlace-red-icon wa-color">
-                        <i class='bx bxl-whatsapp'></i> WhatsApp
-                    </a>
+            <div class="hero-contenido">
+                <h1>Tejiendo Momentos Felices</h1>
+                <p>Descubre el tierno mundo de los amigurumis y diseños personalizados hechos con hilos de amor.</p>
+                <a href="catalogo.html" class="btn-principal">Ver Catálogo</a>
+            </div>
+        </section>
+
+        <!-- FOOTER GLOBAL OPTIMIZADO -->
+        <footer>
+            <div class="contenedor contenedor-footer">
+                
+                <!-- Bloque 1: Identidad -->
+                <div class="bloque-footer info-marca">
+                    <img src="img/Logo_Sello.png" alt="Logo Casa Arág" class="logo-img">
+                    <p>Amigurumis y diseños personalizados hechos con hilos de amor.</p>
                 </div>
+
+                <!-- Bloque 2: Redes Sociales -->
+                <div class="bloque-footer redes-contacto">
+                    <h4>Conéctate con Nosotros</h4>
+                    <div class="lista-redes-v">
+                        <a href="https://www.instagram.com/casa.arag/#" target="_blank" class="enlace-red-icon ig-color">
+                            <i class='bx bxl-instagram'></i> Instagram
+                        </a>
+                        <a href="https://www.tiktok.com/@casa.arag" target="_blank" class="enlace-red-icon tt-color">
+                            <i class='bx bxl-tiktok'></i> TikTok
+                        </a>
+                        <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g" target="_blank" class="enlace-red-icon wa-color">
+                            <i class='bx bxl-whatsapp'></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
-        </div>
+            <div class="barra-copyright">
+                <p>&copy; 2026 Casa Arág. Todos los derechos reservados. Hecho con ❤️ en Colombia.</p>
+            </div>
+        </footer>
+        
+        <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20vengo de la página web y me gustaría cotizar un diseño personalizado." target="_blank" class="btn-flotante-wa" title="Escríbenos ya">
+        <i class='bx bxl-whatsapp'></i>
+        </a>
 
-        <div class="barra-copyright">
-            <p>&copy; 2026 Casa Arág. Todos los derechos reservados. Hecho con ❤️ en Colombia.</p>
-        </div>
-    </footer>
-    
-    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20vengo de la página web y me gustaría cotizar un diseño personalizado." target="_blank" class="btn-flotante-wa" title="Escríbenos ya">
-    <i class='bx bxl-whatsapp'></i>
-    </a>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const btnMenu = document.getElementById("btn-menu-movil");
+            const navMenu = document.getElementById("nav-menu");
+            const iconoMenu = document.getElementById("icono-menu");
 
-</body>
+                btnMenu.addEventListener("click", () => {
+                // 1. Intercambiar la clase 'abierto' en el nav
+                navMenu.classList.toggle("abierto");
+
+                // 2. Cambiar la física del icono (Si está abierto muestra una X, si no, las 3 líneas)
+                if (navMenu.classList.contains("abierto")) {
+                    iconoMenu.className = "bx bx-x"; // Icono de cerrar de Boxicons
+                    btnMenu.style.transform = "rotate(90deg)"; // Pequeño giro estético al abrir
+                } else {
+                    iconoMenu.className = "bx bx-menu"; // Icono de hamburguesa original
+                    btnMenu.style.transform = "rotate(0deg)";
+                }
+            });
+
+            // Opcional: Cerrar el menú automáticamente si el usuario da clic en un enlace
+                const enlaces = document.querySelectorAll(".nav-link");
+                enlaces.forEach(enlace => {
+                enlace.addEventListener("click", () => {
+                    navMenu.classList.remove("abierto");
+                    iconoMenu.className = "bx bx-menu";
+                    btnMenu.style.transform = "rotate(0deg)";
+                });
+            });
+        });
+        </script>
+
+    </body>
 </html>

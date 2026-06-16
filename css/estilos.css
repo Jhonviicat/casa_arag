@@ -17,8 +17,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--color-fondo);
     color: var(--color-principal);
+    overflow-x: hidden; /* Evita que aparezca una barra de desplazamiento horizontal por cualquier elemento que se salga del ancho */
 }
-
+html {
+    overflow-x: hidden; /* Refuerzo para asegurar que no haya scroll horizontal en ningún navegador */
+}
 h1, h2, h3 {
     font-family: "DynaPuff", system-ui;
     font-optical-sizing: auto;
@@ -26,6 +29,7 @@ h1, h2, h3 {
     font-style: normal;
     font-variation-settings: "wdth" 100;
 }
+
 /* ==========================================================================
    3. ESTRUCTURAS GLOBALES 
    ========================================================================== */
@@ -71,9 +75,9 @@ nav a {
     transition: all 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--color-secundario);
-}
+nav a:hover {color: var(--color-secundario);}
+
+.btn-menu-movil { display: none; }
 
 /* ==========================================================================
    5. SECCIÓN HERO (Banner de Bienvenida)
@@ -526,8 +530,8 @@ footer {
 .imagen-contenedor img {
     width: 100%;
     height: 100%;
-    object-fit: contain;                  /* ¡La magia! Muestra la foto COMPLETA sin recortar ni un pixel */
-    padding: 15px;                        /* Colchón de seguridad para que el producto respire elegantemente */
+    object-fit: cover;                  /* ¡La magia! Muestra la foto COMPLETA sin recortar ni un pixel */
+    padding: 0px;                        /* Colchón de seguridad para que el producto respire elegantemente */
 }
 
 /* Badge de Categoría flotante */
@@ -542,6 +546,7 @@ footer {
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
+    z-index: 10; /* Se asegura de que la etiqueta siempre esté por encima de la imagen */
 }
 
 /* Información */
@@ -633,8 +638,196 @@ footer {
 }
 
 
+
 /* ==========================================================================
-   12. MEDIA QUERY (Para pantallas grandes: Computadoras y Tablets)
+   12. BOTÓN FLOTANTE DE WHATSAPP (Global con Animación de Pulso)
+   ========================================================================== */
+.btn-flotante-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: var(--color-blanco);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 9999;              /* Escudo supremo para quedar por encima de todo */
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    animation: pulsoOndaWa 2s infinite; /* Activa la animación en bucle infinito */
+}
+
+.btn-flotante-wa:hover {
+    transform: scale(1.1) rotate(5deg); /* Crece un poco y gira sutilmente al pasar el mouse */
+}
+
+/* 🧠 INGENIERÍA DE ANIMACIÓN: Crea una onda expansiva invisible que se dilata */
+@keyframes pulsoOndaWa {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* ==========================================================================
+   13. SISTEMA DE FILTROS (SEGMENTACIÓN DE DATOS)
+   ========================================================================== */
+.filtros-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px auto;
+    flex-wrap: wrap; /* Si hay muchos filtros en celular, se acomodan abajo solos */
+    max-width: 800px;
+}
+
+.btn-filtro {
+    background-color: transparent;
+    border: 2px solid var(--color-principal);
+    color: var(--color-principal);
+    padding: 10px 22px;
+    font-family: 'DynaPuff', sans-serif;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Estado del botón cuando está seleccionado (Estilo Slicer de Excel) */
+.btn-filtro.activo, .btn-filtro:hover {
+    background-color: var(--color-principal);
+    color: var(--color-fondo); /* Intercambia los colores para resaltar */
+    box-shadow: 0 4px 10px rgba(110, 68, 43, 0.2);
+}
+
+/* 🚫 LA CLASE CONTROLADORA JAVASCRIPT */
+.producto-tarjeta.oculto {
+    display: none !important; /* Desvanece la caja por completo y reacomoda la rejilla */
+}
+
+/* ==========================================================================
+   14. VISOR INTERACTIVO EN MULTI-ÁNGULO (Lightbox)
+   ========================================================================== */
+.img-interactiva {
+    cursor: zoom-in; /* Indica al usuario que la imagen se puede expandir */
+    transition: opacity 0.3s ease;
+}
+.img-interactiva:hover {
+    opacity: 0.9;
+}
+
+/* El telón de fondo oscuro */
+.visor-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22, 11, 6, 0.93); /* Marrón súper oscuro translúcido */
+    z-index: 10000; /* Por encima de la barra sticky y del botón de WhatsApp */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Contenedor central */
+.visor-contenido {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+}
+
+.visor-vista-principal {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visor-vista-principal img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Muestra el ángulo completo sin recortes artificiales */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Botones de navegación (Flechas) */
+.visor-nav {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--color-blanco);
+    font-size: 28px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+    user-select: none;
+}
+.visor-nav:hover {
+    background: var(--color-principal);
+}
+.nav-izq { margin-right: 20px; }
+.nav-der { margin-left: 20px; }
+
+/* Botón de cerrar externo */
+.visor-cerrar {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: rgba(255,255,255,0.7);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.visor-cerrar:hover {
+    color: var(--color-blanco);
+}
+
+/* Tira inferior de miniaturas */
+.visor-miniaturas {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    max-width: 90%;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.miniatura {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.4;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.miniatura.activa, .miniatura:hover {
+    opacity: 1;
+    border-color: var(--color-fondo); /* Resalta la foto que se está viendo */
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   15. MEDIA QUERY (Para pantallas grandes: Computadoras y Tablets)
    ========================================================================== */
 @media (min-width: 768px) {
     header {
@@ -740,41 +933,72 @@ footer {
 }
 
 /* ==========================================================================
-   13. BOTÓN FLOTANTE DE WHATSAPP (Global con Animación de Pulso)
+   16. ADAPTACIÓN RESPONSIVA DEL HEADER (Mobile Menu)
    ========================================================================== */
-.btn-flotante-wa {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25D366;
-    color: var(--color-blanco);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    z-index: 9999;              /* Escudo supremo para quedar por encima de todo */
-    text-decoration: none;
-    transition: transform 0.3s ease;
-    animation: pulsoOndaWa 2s infinite; /* Activa la animación en bucle infinito */
+/* Optimización móvil */
+@media (max-width: 768px) {
+    .visor-vista-principal { height: 320px; }
+    .visor-nav { font-size: 20px; padding: 10px 14px; }
+    .nav-izq { margin-right: 5px; }
+    .nav-der { margin-left: 5px; }
+    
+    /* 1. Forzar a que el header se comporte como una franja rígida horizontal */
+    header {
+        display: flex;
+        justify-content: space-between; /* Envía el logo a la izquierda y el botón a la derecha */
+        align-items: center;
+        padding: 15px 20px;
+        height: 70px;                  /* Fijamos un alto estricto para la franja */
+        position: sticky;
+        top: 0;
+        background-color: var(--color-blanco);
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* 2. Despertar y estilizar el botón de las 3 líneas */
+    .btn-menu-movil {
+        display: flex;                 /* Se vuelve visible únicamente en celulares */
+        background: none;
+        border: none;
+        color: var(--color-principal);
+        font-size: 32px;               /* Tamaño perfecto para interacción táctil */
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        z-index: 1002;
+    }
+
+    /* 3. Transformar el NAV tradicional en una cortina flotante absoluta */
+    .nav-menu {
+        position: absolute;
+        top: 70px;                     /* Nace exactamente donde termina la franja del header */
+        right: -100%;                  /* 💡 SECRETO: Escondido completamente a la derecha de la pantalla */
+        width: 100%;                   /* Cubre todo el ancho del celular al abrirse */
+        height: calc(100vh - 70px);    /* Ocupa el resto de la pantalla vertical disponible */
+        background-color: rgba(255, 255, 255, 0.98); /* Fondo crema/blanco translúcido premium */
+        display: flex;
+        flex-direction: column;        /* Apila los enlaces uno debajo del otro */
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.4s ease;   /* Animación suave de deslizamiento lateral */
+        z-index: 1001;
+    }
+
+    /* Estilos de las letras del menú en celular */
+    .nav-menu .nav-link {
+        font-family: 'DynaPuff', sans-serif;
+        font-size: 22px;               /* Letras más grandes para que sean fáciles de pulsar con el dedo */
+        color: var(--color-principal);
+        text-decoration: none;
+    }
+
+    /* 🚀 LA CLASE DISPARADORA (Se inyectará con JavaScript) */
+    .nav-menu.abierto {
+        right: 0;                      /* Lanza la cortina al frente cubriendo la pantalla */
+    }
 }
 
-.btn-flotante-wa:hover {
-    transform: scale(1.1) rotate(5deg); /* Crece un poco y gira sutilmente al pasar el mouse */
-}
 
-/* 🧠 INGENIERÍA DE ANIMACIÓN: Crea una onda expansiva invisible que se dilata */
-@keyframes pulsoOndaWa {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
-}
+
+
