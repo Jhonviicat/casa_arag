@@ -40,164 +40,511 @@
                 
                 <div class="filtros-contenedor">
                     <button class="btn-filtro activo" data-target="todos">Todos</button>
-                    <button class="btn-filtro" data-target="hogar">Hogar</button>
-                    <button class="btn-filtro" data-target="accesorios">Accesorios</button>
+                    <button class="btn-filtro" data-target="accesorios">Accesorios</button>                    
                     <button class="btn-filtro" data-target="amigurumis">Amigurumis</button>
+                    <button class="btn-filtro" data-target="hogar">Hogar</button>
                     <button class="btn-filtro" data-target="mascotas">Mascotas</button>
+                    <button class="btn-filtro" data-target="moda">Moda Tejida</button>
+                    <button class="btn-filtro btn-disponible" data-target="disponible">Disponible para entrega</button>
                 </div>
 
                 <!-- Contenedor principal en CSS Grid -->
                 <div class="grid-productos">
 
-                    <!-- Tarjeta 1: Conjunto Margaritas -->
-                    <div class="tarjeta-producto" data-category="accesorios">
-                        <div class="imagen-contenedor">
-                            <span class="etiqueta-categoria">Accesorios</span>
-                            <img src="img/conjunto-margaritas.jpg" 
-                                alt="Conjunto Primavera Margaritas"
-                                class="img-interactiva"
-                                data-galeria="img/conjunto-margaritas.jpg,img/saco.jpg">
-                        </div>
-                        <div class="info-producto">
-                            <h3>Conjunto Primavera Margaritas</h3>
-                            <p class="descripcion">Exclusivo outfit de tres piezas: short, top y sombrero tejido con detalles florales.</p>
-                            <p class="precio">Cotizar Precio</p>
-                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Conjunto%20Primavera%20Margaritas" target="_blank" class="btn-pedido">
-                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                            </a>
-                        </div>
-                    </div>
+<!-- Tarjeta : Canasto de Rosas -->
+            <div class="tarjeta-producto" data-category="hogar">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Hogar</span>
+                    <!-- <span class="etiqueta-stock">Disponible para entrega</span> -->
+                    <img src="img/CanastoRosas0.jpeg" 
+                         alt="Canasto circular blanco y con rosas en el borde superior tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/CanastoRosas0.jpeg,img/CanastoRosas1.jpeg,img/CanastoRosas2.jpeg,img/CanastoRosas3.jpeg,img/CanastoRosas4.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Canasto de Rosas</h3>
+                    <p class="descripcion">Elegante canasto organizador circular decorado con un hermoso borde de rosas rojas tejidas, ideal para darle un toque tierno y artesanal al hogar.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Canasto%20de%20Rosas" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
 
-                    <!-- Tarjeta 2: Traje Chapulin Colorado -->
-                    <div class="tarjeta-producto" data-category="mascotas">
-                        <div class="imagen-contenedor">
-                            <span class="etiqueta-categoria">Mascotas</span>
-                             <img src="img/Chapulin1.jpeg" 
-                                alt="Traje Chapulin Colorado para Perros"
-                                class="img-interactiva"
-                                data-galeria="img/Chapulin1.jpeg,img/Chapulin2.jpeg,img/Chapulin3.jpeg,img/Chapulin4.jpeg">
-                        </div>
-                        <div class="info-producto">
-                            <h3>Traje Chapulin Colorado</h3>
-                            <p class="descripcion">Traje exclusivo para perros, inspirado en el personaje de Chapulin Colorado.</p>
-                            <p class="precio">Cotizar Precio</p>
-                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Traje%20Chapulin%20Colorado" target="_blank" class="btn-pedido">
-                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                            </a>
-                        </div>
-                    </div>
+            <!-- Tarjeta : San José -->
+            <div class="tarjeta-producto" data-category="amigurumis">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Amigurumis</span>
+                    <img src="img/SanJose0.jpeg" 
+                         alt="Muñeco de San José con vestido verde acostado en la cama tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/SanJose0.jpeg,img/SanJose1.jpeg,img/SanJoseCabeza.jpeg,img/SanJosePelo.jpeg,img/SanJosePies.jpeg,img/SanJoseAlmohada.jpeg,img/SanJoseCama.jpeg,img/SanJoseManta1.jpeg,img/SanJoseManta2.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>San José</h3>
+                    <p class="descripcion">Pesebre coleccionable de alta fidelidad que incluye la figura de San José de amigurumi con accesorios completos: cuna, almohada y mantas tejidas con hilos premium.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Amigurumi%20de%20San%20José" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
 
-                    <!-- Tarjeta 3: Traje de Navidad -->
-                    <div class="tarjeta-producto" data-category="infantil">
-                        <div class="imagen-contenedor">
-                            <span class="etiqueta-categoria">Infantil</span>
-                            <img src="img/forro_vino.jpg" alt="Traje Infantil Santa Claus">
-                        </div>
-                        <div class="info-producto">
-                            <h3>Pantalón Suspensores Claus</h3>
-                            <p class="descripcion">Traje navideño infantil con tirantas y cinturón tejido, suave y cómodo para bebés.</p>
-                            <p class="precio">Cotizar Precio</p>
-                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20informaci%C3%B3n%20del%20traje%20navide%C3%B1o%20con%20suspensores" target="_blank" class="btn-pedido">
-                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                            </a>
-                        </div>
-                    </div>
+            <!-- Tarjeta : Zapatos Miniatura -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/ZapatosMini0.jpeg" 
+                         alt="Zapatos miniaturas de varios colores con un detalle de dulce adentro tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/ZapatosMini0.jpeg,img/ZapatosMini1.jpeg,img/ZapatosMini2.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Zapatos Miniatura</h3>
+                    <p class="descripcion">Tiernos zapatitos decorativos a escala en variedad de colores pastel, ideales como recordatorios para eventos especiales o detalles sorpresa.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20los%20Zapatos%20Miniatura" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
 
-                    <!-- Tarjeta 4: Canasto Rosas -->
-                    <div class="tarjeta-producto" data-category="hogar">
-                        <div class="imagen-contenedor">
-                            <span class="etiqueta-categoria">Hogar</span>
-                            <img src="img/canasto-rosas.jpg" alt="Canasto Organizador de Rosas">
-                        </div>
-                        <div class="info-producto">
-                            <h3>Canasto Premium Rosas</h3>
-                            <p class="descripcion">Cesta organizadora tejida en trapillo premium con un elegante borde decorado de rosas rojas.</p>
-                            <p class="precio">Cotizar Precio</p>
-                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20interesa%20el%20canasto%20premium%20de%20rosas" target="_blank" class="btn-pedido">
-                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                            </a>
-                        </div>
-                    </div>
+            <!-- Tarjeta : Vestido Gris -->
+            <div class="tarjeta-producto" data-category="moda">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Moda Tejida</span>
+                    <img src="img/VestidoGris0.jpeg" 
+                         alt="Conjunto de un vestido gris para bebe tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/VestidoGris0.jpeg,img/VestidoGris1.jpeg,img/VestidoGris2.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Vestido Gris</h3>
+                    <p class="descripcion">Delicado outfit infantil de gala tejido de tres piezas: short elástico, top con tirantes y sombrero para el sol adornado con minuciosas margaritas blancas.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Vestido%20Gris%20Infantil" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
 
-                    <!-- Tarjeta 5: Canastos Pasteles -->
-                    <div class="tarjeta-producto" data-category="hogar">
-                        <div class="imagen-contenedor">
-                            <span class="etiqueta-categoria">Hogar</span>
-                            <img src="img/doble_canasto.jpg" alt="Canastos Organizadores Pasteles">
-                        </div>
-                        <div class="info-producto">
-                            <h3>Set de Canastos Organizadores</h3>
-                            <p class="descripcion">Canastitas multiusos en tonos pasteles, ideales para decoración o empaques de regalos especiales.</p>
-                            <p class="precio">Cotizar Precio</p>
-                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20informaci%C3%B3n%20del%20set%20de%20canastos%20pasteles" target="_blank" class="btn-pedido">
-                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                            </a>
-                        </div>
-                    </div>
+            <!-- Tarjeta : Saco -->
+            <div class="tarjeta-producto" data-category="moda">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Moda Tejida</span>
+                    <img src="img/Saco1.jpeg" 
+                         alt="Saco de color gris con blanco para bebe tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/Saco1.jpeg,img/Saco2.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Saco de Hilo Multicolor</h3>
+                    <p class="descripcion">Abrigador saco infantil tejido a mano con un patrón de cuadros combinados en tonos gris, rosa y crema, extra suave y delicado con la piel del bebé.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Saco%20de%20Hilo%20Multicolor" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
 
-                    <!-- Tarjeta 6: Separador Girasol -->
-                    <div class="tarjeta-producto" data-category="accesorios">
-                        <div class="imagen-contenedor">
-                            <span class="etiqueta-categoria">Accesorios</span>
-                            <img src="img/separador-girasol.jpg" alt="Separador de libros Girasol">
-                        </div>
-                        <div class="info-producto">
-                            <h3>Separador de Libros Girasol</h3>
-                            <p class="descripcion">Detalle tejido ideal para amantes de la lectura. Un girasol lleno de vida para acompañar tus libros.</p>
-                            <p class="precio">Cotizar Precio</p>
-                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20un%20separador%20de%20girasol" target="_blank" class="btn-pedido">
-                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                            </a>
-                        </div>
-                    </div>
+            <!-- Tarjeta : Saco de Color Rosa -->
+            <div class="tarjeta-producto" data-category="moda">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Moda Tejida</span>
+                    <img src="img/SacoRosa.jpeg" 
+                         alt="Saco de color rosa para bebe tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/SacoRosa.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Saco Rosa Premium</h3>
+                    <p class="descripcion">Chaquetilla tejida en lana hipoalergénica con una hermosa transición de tonalidades rosa, cuello amplio y solapa reforzada para máxima comodidad.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Saco%20Rosa%20Premium" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
 
-                    <!-- Tarjeta 7: Llavero Abejita -->
-                    <div class="tarjeta-producto" data-category="accesorios">
-                        <div class="imagen-contenedor">
-                            <span class="etiqueta-categoria">Accesorios</span>
-                            <img src="img/separador_abeja.jpg" alt="Llavero Abeja Amigurumi">
-                        </div>
-                        <div class="info-producto">
-                            <h3>Llavero Abejita Tierna</h3>
-                            <p class="descripcion">Pequeña abejita amigurumi acompañada de una margarita blanca tejida, el accesorio perfecto para tus llaves.</p>
-                            <p class="precio">Cotizar Precio</p>
-                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20cotizar%20el%20llavero%20de%20abejita" target="_blank" class="btn-pedido">
-                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                            </a>
-                        </div>
-                    </div>
+            <!-- Tarjeta : Mini Pantalon Navideño -->
+            <div class="tarjeta-producto" data-category="hogar">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Hogar</span>
+                    <img src="img/PantsClaus.jpeg" 
+                         alt="Mini Pantalon Navideño tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/PantsClaus.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Pantalón Suspensores Claus</h3>
+                    <p class="descripcion">Divertido y tierno contenedor o accesorio navideño con la forma del traje de Santa Claus, ideal para decoración de mesas, árboles o envolturas festivas.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Pantalon%20Suspensores%20Claus" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
 
-                    <!-- Tarjeta 8: Esferos Corazón -->
-                    <div class="tarjeta-producto" data-category="accesorios">
-                        <div class="imagen-contenedor">
-                            <span class="etiqueta-categoria">Accesorios</span>
-                            <img src="img/esfero_corazon.jpg" alt="Esferos decorados corazón">
-                        </div>
-                        <div class="info-producto">
-                            <h3>Varitas/Esferos San Valentín</h3>
-                            <p class="descripcion">Esferos decorativos forrados con apliques superiores en forma de corazones rosa y lazos delicados.</p>
-                            <p class="precio">Cotizar Precio</p>
-                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20interesan%20los%20esferos%20decorados%20de%20coraz%C3%B3n" target="_blank" class="btn-pedido">
-                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                            </a>
-                        </div>
-                    </div>
+            <!-- Tarjeta : Rosa unida con Abeja -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/RosaAbeja.jpeg" 
+                         alt="Rosa unida con una abeja tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/RosaAbeja.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Rosa con Abejita</h3>
+                    <p class="descripcion">Detalle botánico artesanal que combina una impecable rosa roja con tallo moldeable y una diminuta abejita de amigurumi compañera.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20la%20Rosa%20con%20Abejita" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
 
-                    <!-- Tarjeta 9: Maceta Corazón -->
-                    <div class="tarjeta-producto" data-category="accesorios">
-                        <div class="imagen-contenedor">
-                            <span class="etiqueta-categoria">Accesorios</span>
-                            <img src="img/maceta-corazon.jpg" alt="Mini Maceta Corazón Amigurumi">
-                        </div>
-                        <div class="info-producto">
-                            <h3>Mini Maceta Corazón</h3>
-                            <p class="descripcion">Pequeña maceta rústica con un gran corazón amigurumi rojo. Un detalle inolvidable y duradero.</p>
-                            <p class="precio">Cotizar Precio</p>
-                            <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20quiero%20encargar%20una%20mini%20maceta%20de%20coraz%C3%B3n" target="_blank" class="btn-pedido">
-                                <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
-                            </a>
-                        </div>
-                    </div>
+            <!-- Tarjeta : Margarita unida con Abeja -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/MargaritaAbeja.jpeg" 
+                         alt="Flor margarita unida con una abeja tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/MargaritaAbeja.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Margarita con Abejita</h3>
+                    <p class="descripcion">Flor margarita de tallo largo acompañada de una coqueta abejita tejida a mano, un adorno lleno de vida ideal para regalar en primavera.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20la%20Margarita%20con%20Abejita" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Llavero Forma Corazón Azul -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/LlaveroCorazonAzul.jpeg" 
+                         alt="Llavero en forma de corazón de color azul plano tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/LlaveroCorazonAzul.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Llavero Corazón Celeste</h3>
+                    <p class="descripcion">Encantador llavero acolchado en forma de corazón azul cielo, equipado con herraje metálico resistente y borla decorativa a juego.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Llavero%20Corazon%20Celeste" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Llavero Forma Corazón Morado -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/LlaveroCorazonMorado.jpeg" 
+                         alt="Llavero en forma de Corazón de color morado plano tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/LlaveroCorazonMorado.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Llavero Corazón Lavanda</h3>
+                    <p class="descripcion">Llavero artesanal en suave tono morado lavanda, tejido con puntada compacta de alta resistencia y herraje premium para asegurar tus llaves con estilo.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Llavero%20Corazon%20Lavanda" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Llavero de Girasol -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/GirasolLlavero1.jpeg" 
+                         alt="Llavero en forma de girasol tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/GirasolLlavero1.jpeg,img/GirasolLlavero2.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Llavero de Girasol</h3>
+                    <p class="descripcion">Llavero radiante con forma de minigirasol, tejido con pétalos amarillos muy definidos, perfecto para colgar en carteras, morrales o llaves del auto.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Llavero%20de%20Girasol" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Llavero con forma de Flor -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/FlorLlavero.jpeg" 
+                         alt="Llavero en forma de corazón de color rosa plano tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/FlorLlavero.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Llavero Cerezo</h3>
+                    <p class="descripcion">Tierno llavero doble con forma de flor de cerezo en contrastes rosa y fucsia, un detalle tejido lleno de feminidad y dulzura.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Llavero%20Cerezo" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Llavero de Corazón -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/CorazonLlavero.jpeg" 
+                         alt="Llavero en forma de corazón de color negro tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/CorazonLlavero.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Llavero Corazón Onix</h3>
+                    <p class="descripcion">Llavero minimalista en forma de corazón tejido en color negro sólido, elegante, unisex y sumamente suave al tacto para uso diario.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Llavero%20Corazon%20Onix" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Girasol -->
+            <div class="tarjeta-producto" data-category="hogar">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Hogar</span>
+                    <img src="img/Girasol.jpeg" 
+                         alt="Flor girasol con tallo tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/Girasol.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Girasol Eterno</h3>
+                    <p class="descripcion">Flor de girasol tejida a escala real con tallo firme y hojas verdes moldeables. El regalo perfecto que conserva su brillo y color para siempre sin marchitarse.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Girasol%20Eterno" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Corazones Miniatura -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/Corazones.jpeg" 
+                         alt="Corazones miniaturas de varios colores tejidos a mano"
+                         class="img-interactiva"
+                         data-galeria="img/Corazones.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Corazones Miniatura</h3>
+                    <p class="descripcion">Pequeños corazones tridimensionales rellenos de vellón siliconado en variada paleta de colores, ideales para personalizaciones o recuerdos de eventos.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20los%20Corazones%20Miniatura" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Corazón en maceta -->
+            <div class="tarjeta-producto" data-category="hogar">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Hogar</span>
+                    <img src="img/CorazonMaceta.jpeg" 
+                         alt="Corazon unido a una maceta tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/CorazonMaceta.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Corazón en Maceta</h3>
+                    <p class="descripcion">Tierno adorno de escritorio que muestra un corazón rojo amigurumi floreciendo desde una mini maceta café, un detalle cargado de amor para oficinas.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Coraz%C3%B3n%20en%20Maceta" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Traje Chapulin para mascota -->
+            <div class="tarjeta-producto" data-category="mascotas">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Mascotas</span>
+                    <img src="img/Chapulin1.jpeg" 
+                         alt="Traje de chapulin diseñado para mascota tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/Chapulin1.jpeg,img/Chapulin2.jpeg,img/Chapulin3.jpeg,img/Chapulin4.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Traje Chapulín para Mascota</h3>
+                    <p class="descripcion">Exclusivo disfraz tejido para perritos o gatos inspirado en el Chapulín Colorado, incluye gorrito con antenas y el escudo de corazón "CH" al frente.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Traje%20Chapul%C3%ADn%20para%20Mascota" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Esfero de corazón -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/EsferoRosa0.jpeg" 
+                         alt="Esfero con forma de corazón de color rosa tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/EsferoRosa0.jpeg,img/EsferoRosa1.jpeg,img/EsferoRosa2.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Esfero Corazón Rosa</h3>
+                    <p class="descripcion">Bolígrafo artesanal forrado con hilado rosa y coronado con un sutil corazón tejido calado, una herramienta de escritura hermosa y ergonómica.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Esfero%20Coraz%C3%B3n%20Rosa" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Esferos de corazón distintos colores -->
+            <div class="tarjeta-producto" data-category="accesorios">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Accesorios</span>
+                    <img src="img/EsferosColores.jpg" 
+                         alt="Esferos con forma de corazón de distintos colores tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/EsferosColores.jpg">
+                </div>
+                <div class="info-producto">
+                    <h3>Esferos Corazón Multicolor</h3>
+                    <p class="descripcion">Kit de bolígrafos de colección decorados con siluetas de corazón tejidas en variados tonos vivos, ideales para obsequios corporativos, escolares o familiares.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20los%20Esferos%20Coraz%C3%B3n%20Multicolor" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Canasto blanco con verde -->
+            <div class="tarjeta-producto" data-category="hogar">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Hogar</span>
+                    <img src="img/CanastoVerde.jpeg" 
+                         alt="Canasto circular blanco con el borde superior de color verde tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/CanastoVerde.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Canasto Blanco Esmeralda</h3>
+                    <p class="descripcion">Canasto multiusos de base circular firme tejido en color blanco, coronado con un vistoso borde festoneado en verde esmeralda para organizar tus joyas o hilos.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Canasto%20Blanco%20Esmeralda" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Canasto con cactus -->
+            <div class="tarjeta-producto" data-category="hogar">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Hogar</span>
+                    <img src="img/CanastoCactus.jpeg" 
+                         alt="Canasto circular blanco con planta cactus tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/CanastoCactus.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Canasto con Cactus</h3>
+                    <p class="descripcion">Original pieza decorativa que incluye un tierno cactus esférico tejido en punto relieve, resguardado de forma permanente dentro de su cesta blanca artesanal.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Canasto%20con%20Cactus" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Canasto 3 colores -->
+            <div class="tarjeta-producto" data-category="hogar">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Hogar</span>
+                    <img src="img/Canasto3colores.jpeg" 
+                         alt="Canasto circular de 3 colores azul, rosa y verde tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/Canasto3colores.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Canasto Circular Tricolor</h3>
+                    <p class="descripcion">Llamativo contenedor tejido en tres franjas simétricas de tonos azul, rosa y verde pastel, una adición alegre perfecta para cuartos de bebés o niños.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Canasto%20Circular%20Tricolor" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Canasto Rectangular 3 colores -->
+            <div class="tarjeta-producto" data-category="hogar">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Hogar</span>
+                    <img src="img/CanastoRectangular.jpeg" 
+                         alt="Canasto rectangular de 3 colores verde, rosa y azul tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/CanastoRectangular.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Canasto Rectangular Pastel</h3>
+                    <p class="descripcion">Cesta rectangular de gran almacenamiento tejida con paredes rígidas en bloques verde, rosa y azul, óptima para repisas de baño o escritorios de estudio.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Canasto%20Rectangular%20Pastel" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Gorro Rosa -->
+            <div class="tarjeta-producto" data-category="moda">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Moda Tejida</span>
+                    <img src="img/GorroRosa.jpeg" 
+                         alt="Gorro de color rosa para bebe tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/GorroRosa.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Gorro Rosa Texturizado</h3>
+                    <p class="descripcion">Gorro infantil de lana premium tejido en patrón de cestería entrelazado, elástico, abrigador y sumamente suave para proteger al recién nacido.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Gorro%20Rosa%20Texturizado" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta : Amigurumi Personalizado2 -->
+            <div class="tarjeta-producto" data-category="amigurumis">
+                <div class="imagen-contenedor">
+                    <span class="etiqueta-categoria">Amigurumis</span>
+                    <img src="img/MuñecoPersona.jpeg" 
+                         alt="Muñeco con estilo de persona personalizado tejido a mano"
+                         class="img-interactiva"
+                         data-galeria="img/MuñecoPersona.jpeg">
+                </div>
+                <div class="info-producto">
+                    <h3>Amigurumi Casual Retrato</h3>
+                    <p class="descripcion">Muñeco personalizado con un nivel avanzado de detalle: cabello rizado texturizado tridimensional, indumentaria casual a dos tonos y finas expresiones faciales.</p>
+                    <p class="precio">Cotizar Precio</p>
+                    <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20me%20gustar%C3%ADa%20cotizar%20el%20Amigurumi%20Casual%20Retrato" target="_blank" class="btn-pedido">
+                        <i class='bx bxl-whatsapp'></i> Preguntar por WhatsApp
+                    </a>
+                </div>
+            </div>
 
                 </div>
             </div>
@@ -244,27 +591,30 @@
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 const botones = document.querySelectorAll(".btn-filtro");
-                const tarjetas = document.querySelectorAll(".producto-tarjeta");
+                const tarjetas = document.querySelectorAll(".tarjeta-producto");
 
-                botones.forEach(boton => {
-                    boton.addEventListener("click", () => {
-                        // 1. Quitar la clase 'activo' del botón anterior y ponérsela al que recibió el clic
-                        document.querySelector(".btn-filtro.activo").classList.remove("activo");
-                        boton.classList.add("activo");
-
-                        // 2. Obtener la categoría que el usuario quiere ver
-                        const categoriaSeleccionada = boton.getAttribute("data-target");
-
-                        // 3. Evaluar cada tarjeta de producto
+                    botones.forEach(boton => {
+                        boton.addEventListener('click', () => {
+                        // Intercambio de clase activa
+                        botones.forEach(b => b.classList.remove('activo'));
+                        boton.classList.add('activo');
+                        
+                        // Leemos el data-target personalizado que descubriste en tu sesión anterior
+                        const filtro = boton.getAttribute('data-target'); 
+                        
                         tarjetas.forEach(tarjeta => {
-                            const categoriaTarjeta = tarjeta.getAttribute("data-category");
-
-                            // Si el filtro es 'todos' o la tarjeta coincide con la categoría, se muestra
-                            if (categoriaSeleccionada === "todos" || categoriaTarjeta === categoriaSeleccionada) {
-                                tarjeta.classList.remove("oculto");
+                            const categoria = tarjeta.getAttribute('data-category');
+                            
+                            // 🔍 Variable booleana: verifica si la tarjeta tiene la etiqueta verde física dentro
+                            const tieneEtiquetaStock = tarjeta.querySelector('.etiqueta-stock') !== null;
+                            
+                            // Condicional de triple flujo (Todos / Por Categoría / Por Disponibilidad)
+                            if (filtro === 'todos' || filtro === categoria) {
+                                tarjeta.classList.remove('oculto'); // Muestra si coincide o es 'todos'
+                            } else if (filtro === 'disponible' && tieneEtiquetaStock) {
+                                tarjeta.classList.remove('oculto'); // Muestra solo los productos con stock
                             } else {
-                                // Si no coincide, se le inyecta la clase que tiene 'display: none'
-                                tarjeta.classList.add("oculto");
+                                tarjeta.classList.add('oculto');    // Oculta el resto
                             }
                         });
                     });

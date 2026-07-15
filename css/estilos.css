@@ -548,6 +548,30 @@ footer {
     text-transform: uppercase;
     z-index: 10; /* Se asegura de que la etiqueta siempre esté por encima de la imagen */
 }
+/* 
+   Asegurar el contexto de posicionamiento:
+   Si el contenedor de la imagen no tuviera 'relative', la etiqueta se iría 
+   al extremo superior de toda la página web.
+*/
+.imagen-contenedor {
+    position: relative; 
+}
+
+.etiqueta-stock {
+    position: absolute;
+    top: 15px;                  /* Distancia simétrica desde el borde superior */
+    right: 15px;                /* Posicionamiento en el extremo derecho */
+    background-color: #13a840;  /* Verde bosque orgánico premium (indica disponible) */
+    color: var(--color-blanco);
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;  /* Estandarización de texto en mayúsculas */
+    padding: 5px 12px;
+    border-radius: 20px;        /* Bordes redondeados tipo píldora */
+    letter-spacing: 0.5px;      /* Espaciado de caracteres para mejorar legibilidad */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); /* Sombra suave de aislamiento */
+    z-index: 2;                 /* Garantiza que flote sobre la imagen del producto */
+}
 
 /* Información */
 .info-producto {
@@ -680,6 +704,121 @@ footer {
 }
 
 /* ==========================================================================
+    SECCIÓN PEDIDOS PERSONALIZADOS (index.html)
+   ========================================================================== */
+.seccion-personalizados {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--color-fondo);
+}
+
+.contenido-personalizados h2 {
+    color: var(--color-principal);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.subtitulo-personalizados {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: var(--color-principal);
+    line-height: 1.6;
+}
+
+.llamado-accion {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    display: inline-block;
+    max-width: 600px;
+}
+
+.enlace-texto {
+    color: var(--color-principal);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Contenedor del botón y el indicador */
+.contenedor-boton-animado {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-secundario-catalogo {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-secundario-catalogo:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    transform: scale(1.05);
+}
+
+/* Lógica de la animación de la mano interactiva */
+.icono-manito-animada {
+    width: 1.8rem;              /* Reemplaza font-size para darle ancho al SVG */
+    height: 1.8rem;             /* Define el alto proporcional del SVG */
+    color: var(--color-principal);
+    display: inline-block;      /* Permite una alineación correcta al lado del botón */
+    vertical-align: middle;     /* Centra el icono respecto al eje del texto */
+    animation: señalarMano 1.2s infinite alternate ease-in-out;
+}
+
+/* Animación de traslación horizontal (Eje X) */
+@keyframes señalarMano {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-8px); /* La manito se mueve apuntando al botón */
+    }
+}
+
+/* Ajuste Responsivo Móvil */
+@media (max-width: 768px) {
+    .contenedor-boton-animado {
+        flex-direction: column;
+        gap: 15px; /* Un poco más de espacio en celulares */
+    }
+
+    .icono-manito-animada {
+        /* 
+           1. translateY(0) la ubica en su posición base.
+           2. rotate(90deg) toma la manito que apunta a la izquierda y la gira 
+              en sentido horario para que quede apuntando hacia ARRIBA.
+        */
+        transform: translateY(0) rotate(90deg); 
+        
+        /* Cambiamos la animación por una exclusiva para el eje vertical */
+        animation: señalarManoVertical 1.2s infinite alternate ease-in-out;
+    }
+}
+
+/* 🚀 Nueva animación para el movimiento vertical en celulares */
+@keyframes señalarManoVertical {
+    0% {
+        /* Posición inicial apuntando hacia arriba */
+        transform: translateY(0) rotate(90deg);
+    }
+    100% {
+        /* 
+           Se desplaza -8px en el eje Y global (hacia arriba, acercándose al botón)
+           manteniendo su rotación de 90 grados.
+        */
+        transform: translateY(-8px) rotate(90deg);
+    }
+}
+
+/* ==========================================================================
    13. SISTEMA DE FILTROS (SEGMENTACIÓN DE DATOS)
    ========================================================================== */
 .filtros-contenedor {
@@ -711,8 +850,23 @@ footer {
 }
 
 /* 🚫 LA CLASE CONTROLADORA JAVASCRIPT */
-.producto-tarjeta.oculto {
+.tarjeta-producto.oculto {
     display: none !important; /* Desvanece la caja por completo y reacomoda la rejilla */
+}
+/* Estilo base para el botón de disponibilidad inmediata */
+.btn-filtro.btn-disponible {
+    border-color: #13a840; /* Usa aquí el mismo código hexadecimal de tu verde brillante */
+    color: #13a840;
+    font-weight: bold;
+}
+
+/* Comportamiento cuando el mouse pasa por encima o cuando está seleccionado */
+.btn-filtro.btn-disponible:hover,
+.btn-filtro.btn-disponible.activo {
+    background-color: #13a840;
+    color: var(--color-blanco) !important;
+    border-color: #13a840;
+    box-shadow: 0 4px 8px rgba(19, 168, 64, 0.2); /* Destello sutil de color */
 }
 
 /* ==========================================================================

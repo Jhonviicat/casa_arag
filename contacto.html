@@ -36,25 +36,28 @@
 
     <section class="seccion-contacto">
         <div class="contenedor contenedor-contacto">
-                        
+                                
             <div class="bloque-formulario">
                 <form class="formulario-contacto">
+                    <!-- 🛠️ SE AGREGO EL ATRIBUTO name="nombre" -->
                     <div class="grupo-campo">
                         <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" placeholder="Ej. Juana Pérez" required>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Juana Pérez" required>
                     </div>
 
+                    <!-- 🛠️ SE AGREGO EL ATRIBUTO name="email" -->
                     <div class="grupo-campo">
                         <label for="correo">Correo Electrónico</label>
-                        <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+                        <input type="email" id="correo" name="email" placeholder="ejemplo@correo.com" required>
                     </div>
 
+                    <!-- 🛠️ SE AGREGO EL ATRIBUTO name="mensaje" -->
                     <div class="grupo-campo">
                         <label for="mensaje">¿Qué proyecto tienes en mente?</label>
-                        <textarea id="mensaje" rows="5" placeholder="Detállanos el tamaño, colores o personaje que deseas..." required></textarea>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Detállanos el tamaño, colores o personaje que deseas..." required></textarea>
                     </div>
 
-                    <!-- BOTÓN PERSONALIZADO CON TU DISEÑO EN 3D -->
+                    <!-- BOTÓN PERSONALIZADO CON DISEÑO EN 3D -->
                     <button type="submit" class="btn-enviar-imagen">
                         <img src="img/boton_enviar.png" alt="Enviar Mensaje - Casa Arág">
                     </button>
@@ -108,37 +111,76 @@
     </footer>
 
     <a href="https://wa.me/573219503944?text=Hola%20Casa%20Ar%C3%A1g,%20vengo de la página web y me gustaría cotizar un diseño personalizado." target="_blank" class="btn-flotante-wa" title="Escríbenos ya">
-    <i class='bx bxl-whatsapp'></i>
+        <i class='bx bxl-whatsapp'></i>
     </a>
 
+    <!-- LÓGICA DE INTERACTIVIDAD DE LA PÁGINA -->
     <script>
     document.addEventListener("DOMContentLoaded", () => {
+        // === [ APARTADO A: MENÚ HAMBURGUESA MÓVIL ] ===
         const btnMenu = document.getElementById("btn-menu-movil");
         const navMenu = document.getElementById("nav-menu");
         const iconoMenu = document.getElementById("icono-menu");
 
-            btnMenu.addEventListener("click", () => {
-            // 1. Intercambiar la clase 'abierto' en el nav
+        btnMenu.addEventListener("click", () => {
             navMenu.classList.toggle("abierto");
 
-            // 2. Cambiar la física del icono (Si está abierto muestra una X, si no, las 3 líneas)
             if (navMenu.classList.contains("abierto")) {
-                iconoMenu.className = "bx bx-x"; // Icono de cerrar de Boxicons
-                btnMenu.style.transform = "rotate(90deg)"; // Pequeño giro estético al abrir
+                iconoMenu.className = "bx bx-x"; 
+                btnMenu.style.transform = "rotate(90deg)"; 
             } else {
-                iconoMenu.className = "bx bx-menu"; // Icono de hamburguesa original
+                iconoMenu.className = "bx bx-menu"; 
                 btnMenu.style.transform = "rotate(0deg)";
             }
         });
 
-        // Opcional: Cerrar el menú automáticamente si el usuario da clic en un enlace
-            const enlaces = document.querySelectorAll(".nav-link");
-            enlaces.forEach(enlace => {
+        const enlaces = document.querySelectorAll(".nav-link");
+        enlaces.forEach(enlace => {
             enlace.addEventListener("click", () => {
                 navMenu.classList.remove("abierto");
                 iconoMenu.className = "bx bx-menu";
                 btnMenu.style.transform = "rotate(0deg)";
             });
+        });
+
+        // === [ APARTADO B: ENVÍO AUTOMATIZADO A GOOGLE SHEETS ] ===
+        const formulario = document.querySelector('.formulario-contacto');
+        const botonEnviar = formulario.querySelector('.btn-enviar-imagen');
+        
+        // Inyección de su URL de API confirmada en image_7179df.png
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzoWB_4Xj29yCja0q_VMtJFrBDTY9w4V0397aRFgfTGtzwD8kZJphFuAoFtSCjtiWJdeA/exec";
+
+        formulario.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Evita la recarga de página instantánea
+
+            // Feedback visual: deshabilitar y atenuar el botón 3D durante el envío
+            botonEnviar.disabled = true;
+            botonEnviar.style.opacity = "0.5";
+
+            // Recolección y serialización limpia de variables
+            const datosFormulario = new FormData(formulario);
+            const datosSerializados = new URLSearchParams(datosFormulario);
+
+            try {
+                // Transmisión asíncrona hacia el Apps Script de Google
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Modo seguro para procesar redirecciones de Google sin errores de CORS
+                    body: datosSerializados
+                });
+
+                // Al usar 'no-cors', el flujo asume éxito si no salta al bloque catch
+                alert('¡Mensaje enviado con éxito al taller de Casa Arág! Los datos han sido registrados.');
+                formulario.reset(); // Limpia los campos de texto
+
+            } catch (error) {
+                console.error('Error de red en la API de Google:', error);
+                alert('Tuvimos un problema técnico al enviar los datos. Por favor, intente nuevamente.');
+            } finally {
+                // Restablecer el botón 3D a su estado original activo
+                botonEnviar.disabled = false;
+                botonEnviar.style.opacity = "1";
+            }
         });
     });
     </script>
