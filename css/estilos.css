@@ -22,6 +22,13 @@ body {
 html {
     overflow-x: hidden; /* Refuerzo para asegurar que no haya scroll horizontal en ningún navegador */
 }
+
+/* 🛡️ Regla de oro: evita que cualquier elemento estire la pantalla del celular hacia los lados */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 h1, h2, h3 {
     font-family: "DynaPuff", system-ui;
     font-optical-sizing: auto;
@@ -986,10 +993,12 @@ footer {
 
 .carrete-contenedor {
     width: 100%;
-    overflow: hidden;
+    max-width: 100vw; /* Forzamos a que nunca supere el ancho físico del celular */
+    overflow: hidden; /* Corta de forma estricta todo lo que se salga de la pantalla */
     padding: 30px 0;
     position: relative;
     background-color: transparent;
+    box-sizing: border-box; /* Previene desbordes adicionales causados por el padding */
 }
 
 .carrete-contenedor::before,
