@@ -25,6 +25,7 @@
                 <a href="catalogo.html" class="nav-link">Catálogo</a>
                 <a href="nosotros.html" class="nav-link">Nosotros</a>
                 <a href="contacto.html" class="nav-link">Contacto</a>
+                <a href="politicas.html" class="nav-link">Políticas</a>
             </nav>
 
             <button class="btn-menu-movil" id="btn-menu-movil" aria-label="Abrir menú">
@@ -417,10 +418,10 @@
             <div class="tarjeta-producto" data-category="accesorios">
                 <div class="imagen-contenedor">
                     <span class="etiqueta-categoria">Accesorios</span>
-                    <img src="img/EsferosColores.jpg" 
+                    <img src="img/EsferosColores.jpeg" 
                          alt="Esferos con forma de corazón de distintos colores tejido a mano"
                          class="img-interactiva"
-                         data-galeria="img/EsferosColores.jpg">
+                         data-galeria="img/EsferosColores.jpeg">
                 </div>
                 <div class="info-producto">
                     <h3>Esferos Corazón Multicolor</h3>
@@ -620,6 +621,25 @@
                     });
                 });
             });
+        </script>
+
+        <script>
+            // === [ APARTADO C: CAPTURA DE PARÁMETRO URL PARA FILTRADO ] ===
+            // Lee los parámetros de la dirección web (Ej: ?categoria=moda)
+            const parametrosURL = new URLSearchParams(window.location.search);
+            const categoriaDestino = parametrosURL.get('categoria');
+
+            if (categoriaDestino) {
+                // Busca el botón del catálogo que tenga el data-target coincidente
+                const botonFiltrado = document.querySelector(`.btn-filtro[data-target="${categoriaDestino}"]`);
+                
+                if (botonFiltrado) {
+                    // Ejecuta un clic simulado de forma asíncrona para activar el filtro de inmediato
+                    setTimeout(() => {
+                        botonFiltrado.click();
+                    }, 100); // 100ms de retraso para garantizar la transición suave de renderizado
+                }
+            }
         </script>
 
         <!-- MOTOR DEL VISOR MULTI-ÁNGULO -->

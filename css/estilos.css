@@ -981,6 +981,252 @@ footer {
 }
 
 /* ==========================================================================
+   14. CARRETE DE IMÁGENES INFINITO OPTIMIZADO (24 Items)
+   ========================================================================== */
+
+.carrete-contenedor {
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    position: relative;
+    background-color: transparent;
+}
+
+.carrete-contenedor::before,
+.carrete-contenedor::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 10%;
+    top: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+.carrete-contenedor::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-fondo, #fdfbf7) 0%, rgba(253, 251, 247, 0) 100%);
+}
+.carrete-contenedor::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-fondo, #fdfbf7) 0%, rgba(253, 251, 247, 0) 100%);
+}
+
+.carrete-track {
+    display: flex;
+    /* 🛠️ Nueva matemática: (150px de ancho + 30px de márgenes) * 24 elementos totales */
+    width: calc(180px * 24); 
+    animation: scroll-carrete 45s linear infinite; /* Un poco más lento para mejor visibilidad */
+}
+
+.carrete-track:hover {
+    animation-play-state: paused;
+}
+
+.carrete-item {
+    width: 150px;
+    height: 150px;
+    margin: 0 15px;
+    flex-shrink: 0;
+}
+
+/* Permitir que la etiqueta <a> herede el comportamiento flexible */
+.carrete-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.carrete-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 3px solid var(--color-blanco, #ffffff);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.carrete-item img:hover {
+    transform: scale(1.08) rotate(2deg);
+    cursor: pointer;
+}
+
+/* 🎥 Animación de traslación para 12 imágenes originales */
+@keyframes scroll-carrete {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* 🛠️ Se desplaza exactamente la mitad del carril (el primer grupo de 12) */
+        transform: translateX(calc(-180px * 12)); 
+    }
+}
+
+/* 🎥 Lógica de la física de traslación */
+@keyframes scroll-carrete {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Se desplaza exactamente el ancho de la mitad del contenedor (el grupo 1 original) */
+        transform: translateX(calc(-180px * 6)); 
+    }
+}
+
+/* ==========================================================================
+   . SECCIÓN DE POLÍTICAS (politicas.html)
+   ========================================================================== */
+
+.seccion-politicas {
+    padding: 80px 0 60px 0;
+    background-color: var(--color-fondo, #fdfbf7);
+}
+
+.contenedor-politicas {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.titulo-politicas {
+    font-family: 'DynaPuff', sans-serif;
+    color: var(--color-principal, #4a2c11);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.introduccion-politicas {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #5a4b3d;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.bloque-politica {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(74, 44, 17, 0.04);
+    margin-bottom: 30px;
+    border: 1px solid rgba(74, 44, 17, 0.05);
+}
+
+.bloque-politica h2 {
+    font-family: 'DynaPuff', sans-serif;
+    color: var(--color-principal, #4a2c11);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bloque-politica h2 i {
+    color: #00bb2d; /* El verde brillante de tu marca */
+    font-size: 1.6rem;
+}
+
+.bloque-politica p, 
+.bloque-politica li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4f4235;
+    margin-bottom: 10px;
+}
+
+.bloque-politica ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.bloque-politica li {
+    margin-bottom: 12px;
+}
+
+/* Alertas Destacadas (Como la del pago por WhatsApp) */
+.alerta-politica {
+    background-color: rgba(0, 187, 45, 0.06);
+    border-left: 4px solid #00bb2d;
+    padding: 15px 20px;
+    border-radius: 0 12px 12px 0;
+    margin-top: 15px;
+}
+
+.alerta-politica p {
+    margin-bottom: 0;
+    color: #1e3a1e;
+    font-size: 0.95rem;
+}
+
+/* Tablas Adaptativas */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto; /* Permite scroll horizontal en celulares */
+    margin: 20px 0;
+    border-radius: 12px;
+    border: 1px solid #ebdcd0;
+}
+
+.tabla-tiempos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 500px; /* Asegura que no se aplaste en pantallas muy pequeñas */
+}
+
+.tabla-tiempos th {
+    background-color: #ebdcd0;
+    color: var(--color-principal, #4a2c11);
+    font-family: 'DynaPuff', sans-serif;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+}
+
+.tabla-tiempos td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f5ede6;
+    font-size: 0.95rem;
+    color: #4f4235;
+}
+
+.tabla-tiempos tr:last-child td {
+    border-bottom: none;
+}
+
+.nota-tabla {
+    font-size: 0.85rem !important;
+    color: #8c7664 !important;
+    font-style: italic;
+}
+
+.nota-cobertura {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #8c7664;
+    font-style: italic;
+}
+
+/* Ajustes Responsive */
+@media (max-width: 768px) {
+    .seccion-politicas {
+        padding: 60px 0 40px 0;
+    }
+    
+    .titulo-politicas {
+        font-size: 1.8rem;
+    }
+    
+    .bloque-politica {
+        padding: 20px;
+    }
+}
+
+/* ==========================================================================
    15. MEDIA QUERY (Para pantallas grandes: Computadoras y Tablets)
    ========================================================================== */
 @media (min-width: 768px) {
